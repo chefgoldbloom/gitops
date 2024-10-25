@@ -19,4 +19,5 @@ pipeline {
         sh "docker run alpmap"
       }
     }
+  }
 }
