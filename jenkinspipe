@@ -1,11 +1,16 @@
 pipeline {
   agent any
 
+  environment {
+    GIT_SSH_COMMAND = 'ssh -o StrictHostKeyChecking=no'
+  }
+
   stages {
     stage('build') {
       steps {
         git branch: 'main',
-          url: 'https://github.com/chefgoldbloom/containers'
+          credentialsID: 'aeb23390-953c-486b-9ac4-c8f5f74c1a03',
+          url: 'https://github.com/chefgoldbloom/containers.git'
         sh "docker build -t alpmap alpmap"
       }
     }
