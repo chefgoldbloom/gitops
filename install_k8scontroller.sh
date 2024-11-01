@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # Set up System
+sudo hostnamectl set-hostname control-plane
 sudo swapoff -a
 sudo ufw disable
 sudo apt-get update
